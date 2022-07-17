@@ -1,0 +1,116 @@
+procedure DibujarLadoEscalera(){
+  repeat(4){
+    Poner(Negro)
+    Mover(Norte)
+  }
+  Poner(Negro)
+}
+
+program{
+  DibujarLadoEscalera(){
+    Mover(Este)
+    Mover(Sur)
+    Poner(Negro)
+    Mover(Sur)
+    Mover(Sur)
+    Poner(Negro)
+    Mover(Sur)
+    Mover(Este)
+    DibujarLadoEscalera()
+  }
+}
+--------------------------------------------------
+procedure DibujarMesa(color){
+  Poner(color)
+  Mover(Norte)
+  Poner(color)
+  Mover(Norte)
+  Poner(color)
+  Mover(Este)
+  Poner(color)
+  Mover(Este)
+  Poner(color)
+  Mover(Este)
+  Poner(color)
+  Mover(Sur)
+  Poner(color)
+  Mover(Sur)
+  Poner(color)
+}
+------------------------------------------------------------------------------
+function concatenacionEsIgual(primero,segundo,tercero){
+  
+  return (primero+segundo === tercero);
+   
+}
+-------------------------------------------------
+function sumaDeLosMayoresASiete(listaDeNumeros){
+  let sumatoria = 0;
+  for (let numero of listaDeNumeros){
+    if(numero > 7){
+       sumatoria = sumatoria + numero 
+    }
+  }
+  
+      return sumatoria;
+}
+--------------------------------------------------------
+function resumenCancion(cancion){
+  return cancion.nombre +" de la banda "+cancion.banda+" tiene una duracion de "+ (cancion.duracion*60) +" segundos";
+}
+-------------------------------
+module AguaParaMate
+ @temperatura = 0
+  def self.temperatura
+    @temperatura
+  end
+  def self.calentar_agua!(grados)
+    @temperatura += grados
+  end
+  def self.temperatura_exacta?
+    @temperatura == 80
+  end
+end
+-------------------------------------
+module Biblioteca
+  @libros = [Fundacion, Contacto, LaInsoportableLevedadDelSer, Socorro, ComoAguaParaChocolate]
+ def self.nombres_de_libros
+       @libros.map {|libro|libro.nombre}
+  end
+  end
+-------------------------------------
+class Camion
+  def initialize(muebles)
+    @muebles = muebles
+  end
+ def cargar_muebles!
+   @muebles.each{|mueble|mueble.ser_cargado!}
+ end
+ end
+class Colchon
+  def initialize(resortes)
+    @cantidad_de_resortes = resortes
+  end
+   def cantidad_de_resortes
+    @cantidad_de_resortes
+  end
+  def ser_cargado!
+  @cantidad_de_resortes -= 4
+  end
+end
+
+class Sillon
+  def initialize(polvo)
+    @nivel_de_polvo = polvo
+  end 
+  def nivel_de_polvo
+    @nivel_de_polvo
+  end
+  def ser_cargado!
+    @nivel_de_polvo += 20
+  end
+end
+class Electrodomestico
+  def ser_cargado!
+  end
+end
